@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Movie Central</title>
 </head>
 
@@ -12,20 +16,31 @@
     <header>
         <nav>
             <ul>
-                <li><img src="images/camera.png" alt="camera"></li>
-                <li><a href="#">Popular</a></li>
-                <li><a href="#">Top Rated</a></li>
+                <!-- <a href="https://www.flaticon.com/free-icons/camera" title="camera icons">Camera icons created by Freepik -
+                    Flaticon</a> -->
+                <li id="icon"><img src="images/camera.png" alt="camera"></li>
+                <div id="links">
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Top Rated</a></li>
+                </div>
             </ul>
         </nav>
     </header>
 
     <main>
         <form>
-            <input type="search" required placeholder="Search for a movie by title...">
+            <input type="text" required placeholder="Search for a movie by title..." name="movie">
+            <!-- <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Smashicons - Flaticon</a> -->
             <button type="submit"><img src="images/search-icon.png" alt="search-icon"></button>
         </form>
 
-        <div id="movies"></div>
+        <div id="movies">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </main>
 </body>
 
