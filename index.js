@@ -20,6 +20,9 @@ async function createMovie(image_path, movieTitle, movieGenreIDs) {
     const movieDiv = document.createElement('div');
     movieDiv.classList.add('movie');
 
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('content');
+
     const img = document.createElement('img');
     img.src = `${imageURL}${image_path}`;
 
@@ -38,9 +41,11 @@ async function createMovie(image_path, movieTitle, movieGenreIDs) {
     // Remove the comma at the end of string
     genres.innerText = genres.innerText.slice(0, -1);
 
+    contentDiv.appendChild(title);
+    contentDiv.appendChild(genres);
+
     movieDiv.appendChild(img);
-    movieDiv.appendChild(title);
-    movieDiv.appendChild(genres);
+    movieDiv.appendChild(contentDiv);
 
     moviesDiv.appendChild(movieDiv);
 }
@@ -53,6 +58,7 @@ function displayMovies(movies) {
 
 searchBar.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     // Get form data
     const formData = new FormData(searchBar);
     const movie = formData.get('movie');
@@ -62,9 +68,8 @@ searchBar.addEventListener('submit', async (e) => {
         const response = await fetch(`${baseURL}search/movie?api_key=${API_KEY}&query=${movie}`)
         const movies = await response.json();
 
-        displayMovies(movies);
+        moviesDiv.firstChild ? !(moviesDiv.innerHTML = '') & displayMovies(movies) : displayMovies(movies);
     } catch (error) {
         console.error(`Movie not found\n${error}`)
     }
-    e.preventDefault();
 });

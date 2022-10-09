@@ -90,11 +90,40 @@ button img {
     padding: 0 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
+    /* align-items: center; */
     gap: 3rem;
-    width: 100%;
+    /* width: 100%; */
 }
 
-#movies img {
-    border: 3px solid black;
+.movie {
+    width: 300px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+.movie img {
+    cursor: pointer;
+    width: 300px;
+    height: 450px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.movie img:hover {
+    scale: 0.95;
+}
+
+.content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content p:last-child {
+    color: #BABABA;
+    margin-top: 10px;
 }
