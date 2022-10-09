@@ -17,6 +17,7 @@ const fetchMovieGenres = async () => {
 }
 
 async function createMovie(image_path, movieTitle, movieGenreIDs) {
+    // Create elements and assign attributes
     const movieDiv = document.createElement('div');
     movieDiv.classList.add('movie');
 
@@ -30,16 +31,21 @@ async function createMovie(image_path, movieTitle, movieGenreIDs) {
     title.innerText = movieTitle;
 
     const genres = document.createElement('p');
-    const movieGenresList = await fetchMovieGenres();
 
-    movieGenresList.genres.forEach((genre) => {
-        // Add movie genres to p element
-        if (movieGenreIDs.includes(genre.id)) {
-            genres.innerText += `${genre.name},`;
-        }
-    });
-    // Remove the comma at the end of string
-    genres.innerText = genres.innerText.slice(0, -1);
+    try {
+        const movieGenresList = await fetchMovieGenres();
+        movieGenresList.genres.forEach((genre) => {
+            // Add movie genres to p element
+            if (movieGenreIDs.includes(genre.id)) {
+                genres.innerText += `${genre.name},`;
+            }
+        });
+
+        // Remove the comma at the end of string
+        genres.innerText = genres.innerText.slice(0, -1);
+    } catch (error) {
+        console.log(`Failed to fetch genres: ${error}`);
+    }
 
     contentDiv.appendChild(title);
     contentDiv.appendChild(genres);
@@ -68,8 +74,10 @@ searchBar.addEventListener('submit', async (e) => {
         const response = await fetch(`${baseURL}search/movie?api_key=${API_KEY}&query=${movie}`)
         const movies = await response.json();
 
+        console.log(movies);
+
         moviesDiv.firstChild ? !(moviesDiv.innerHTML = '') & displayMovies(movies) : displayMovies(movies);
     } catch (error) {
-        console.error(`Movie not found\n${error}`)
+        console.error(`Movie not found: ${error}`);
     }
 });

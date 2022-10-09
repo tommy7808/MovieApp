@@ -13,28 +13,34 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <!-- <a href="https://www.flaticon.com/free-icons/camera" title="camera icons">Camera icons created by Freepik -
-                    Flaticon</a> -->
-                <li id="icon"><img src="images/camera.png" alt="camera"></li>
-                <div id="links">
-                    <li><a href="#">Popular</a></li>
-                    <li><a href="#">Top Rated</a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-
     <main>
+        <header>
+            <nav>
+                <ul>
+                    <li id="icon"><img src="images/camera.png" alt="camera"></li>
+                    <div id="links">
+                        <li><a href="#">Popular</a></li>
+                        <li><a href="#">Top Rated</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
         <form>
             <input type="text" required placeholder="Search for a movie by title..." name="movie" autocomplete="off">
-            <!-- <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Smashicons - Flaticon</a> -->
             <button type="submit"><img src="images/search-icon.png" alt="search-icon"></button>
         </form>
 
         <div id="movies"></div>
+
+        <footer>
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg"
+                alt="TMDB Logo">
+            <a href="https://www.flaticon.com/free-icons/camera" title="camera icons">Camera icons created by Freepik -
+                Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Smashicons
+                -
+                Flaticon</a>
+        </footer>
     </main>
     <script src="index.js"></script>
 </body>

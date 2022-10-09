@@ -12,6 +12,10 @@ body {
 }
 
 /* Navabr */
+header {
+    width: 100%;
+}
+
 ul {
     display: flex;
     align-items: center;
@@ -27,6 +31,7 @@ a {
     text-decoration: none;
     color: #5465FF;
     font-size: 1.5rem;
+    letter-spacing: 2px;
 }
 
 #links {
@@ -40,15 +45,16 @@ a {
 
 /* Page Content */
 main {
-    margin-top: 3rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 
 /* Search bar */
 form {
+    margin-top: 3rem;
     width: 70%;
     background-color: white;
     display: flex;
@@ -91,11 +97,10 @@ button img {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* align-items: center; */
     gap: 3rem;
-    /* width: 100%; */
 }
 
+/* Movie */
 .movie {
     width: 300px;
     height: 550px;
@@ -126,4 +131,35 @@ button img {
 .content p:last-child {
     color: #BABABA;
     margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #0d253f;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem;
+    margin-top: auto;
+}
+
+footer a {
+    display: block;
+    font-size: 13px;
+}
+
+footer img {
+    width: 450px;
+}
+
+@media only screen and (max-width: 1365px) {
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    footer img {
+        width: 300px;
+    }
 }
