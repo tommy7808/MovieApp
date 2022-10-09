@@ -25,7 +25,8 @@ async function createMovie(image_path, movieTitle, movieGenreIDs) {
     contentDiv.classList.add('content');
 
     const img = document.createElement('img');
-    img.src = `${imageURL}${image_path}`;
+    // The image is not owned by me it belongs to it's respective owners https://www.themoviedb.org
+    img.src = image_path ? `${imageURL}${image_path}` : 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg';
 
     const title = document.createElement('p');
     title.innerText = movieTitle;
