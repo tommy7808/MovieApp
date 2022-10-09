@@ -74,8 +74,6 @@ searchBar.addEventListener('submit', async (e) => {
         const response = await fetch(`${baseURL}search/movie?api_key=${API_KEY}&query=${movie}`)
         const movies = await response.json();
 
-        console.log(movies);
-
         moviesDiv.firstChild ? !(moviesDiv.innerHTML = '') & displayMovies(movies) : displayMovies(movies);
     } catch (error) {
         console.error(`Movie not found: ${error}`);
