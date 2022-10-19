@@ -1,6 +1,6 @@
-# To-Do-List App
+# Movie App
 
-Click [here](https://tommy7808.github.io/To-Do-List/) to run the app.
+Click [here](https://tommy7808.github.io/MovieApp/) to run the app.
 
 ## Project Description
 This is a javascript app that allows a user to search for movies. It uses the [tmdb-api](https://www.themoviedb.org/documentation/api) to search and retrieve movies.
